@@ -1,0 +1,3 @@
+已经验证不能。
+使用arm-linux-gnueabi-gcc-7（ubuntu18.04默认的arm编译器)编译出的程式不能在海思板子上运行。
+提示 syntax error

@@ -1,0 +1,3 @@
+sudo vi /etc/udev/rules.d/50-ttyusb.rules
+
+KERNEL=="ttyUSB*", MODE="0666"
