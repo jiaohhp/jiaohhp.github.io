@@ -1,0 +1,14 @@
+#默认clone master分支
+git clone ...
+
+#clone 指定分支 
+git clone -b blog ...
+
+#clone 到指定目录
+git clone -b blog ... blog
+
+#重命名分支
+git branch -m old_branch new_branch
+git push origin :old_branch
+git push --set-upstream origin new_branch
+
