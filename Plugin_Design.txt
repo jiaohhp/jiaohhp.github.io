@@ -1,0 +1,47 @@
+# 目录结构
+	## FTPS
+	detective/
+			|__ detective.exe
+			|__ framework/
+						|__ framework.dll
+						|__ conf/
+								|__ framework.ini
+								|__ framework.mac1.ini
+								|__ framework.mac2.ini
+								|__ framework.xxx.ini
+						|__ curl/
+						|__ openssl/
+						|__ xxx
+			|__ extentions/
+					|__ watermark/
+								|__ watermark.dll
+								|__ conf/
+										|__ watermark.ini
+										|__ watermark.mac1.ini
+										|__ watermark.mac2.ini
+										|__ watermark.xxx.ini
+								|__ sprite.exe
+
+	## LOCAL
+	detective/
+			|__ detective.exe
+			|__ framework/
+						|__ framework.dll
+						|__ conf.data
+						|__ curl/
+						|__ openssl/
+						|__ xxx
+			|__ extentions/
+					|__ watermark/
+								|__ watermark.dll
+								|__ sprite.exe
+
+
+# 配置文件
+	## .ini配置文件
+	[global]
+	[domain]
+	[mac1]
+	[macxx]
+	## .data配置文件
+	module		section			key			value
