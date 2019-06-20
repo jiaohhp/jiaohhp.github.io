@@ -1,0 +1,30 @@
+#SDK/
+#   |__ bin/
+#   |__ include/
+#   |__ lib/
+#   |__ libexec/
+#   |__ target/
+#            |__ usr
+#                   |__ include/
+#                      |__ boost/
+#                   |__ lib/
+#
+#自定义变量
+SET(SDK "${CMAKE_SOURCE_DIR}/../HI3516")
+set(CROSS_COMPILE_PREFIX "arm-hisiv100-linux-uclibcgnueabi-")
+
+#---------- 接下来的通用设置 ----------------------
+set(MYSYSROOT "${SDK}/target")
+SET(MYTOOLCHAINROOT "${SDK}")
+
+SET(CMAKE_SYSTEM_NAME Linux)
+
+#编译器
+SET(CMAKE_C_COMPILER   ${MYTOOLCHAINROOT}/bin/${CROSS_COMPILE_PREFIX}gcc)
+SET(CMAKE_CXX_COMPILER   ${MYTOOLCHAINROOT}/bin/${CROSS_COMPILE_PREFIX}g++)
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} --sysroot=${MYSYSROOT}" CACHE INTERNAL "" FORCE)
+set(CMAKE_C_LINK_FLAGS "${CMAKE_C_LINK_FLAGS} --sysroot=${MYSYSROOT}" CACHE INTERNAL "" FORCE)
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} --sysroot=${MYSYSROOT}" CACHE INTERNAL "" FORCE)
+set(CMAKE_CXX_LINK_FLAGS "${CMAKE_CXX_LINK_FLAGS} --sysroot=${MYSYSROOT}" CACHE INTERNAL "" FORCE)
+
+
