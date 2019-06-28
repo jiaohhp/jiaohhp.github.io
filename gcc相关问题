@@ -1,0 +1,5 @@
+# 如何查看默认头文件路径
+  gcc -xc -E -v -
+  g++ -xc++ -E -v -
+# 如何查看默认链接路径及链接库
+  gcc -v foo.c -Wl,--verbose 
