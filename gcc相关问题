@@ -1,5 +1,29 @@
 # 如何查看默认头文件路径
   gcc -xc -E -v -
   g++ -xc++ -E -v -
+  
+  比如：ubuntu18.04 执行 i686-w64-mingw32-gcc -xc -E -v - 显示的默认头文件路径为：
+  /usr/lib/gcc/i686-w64-mingw32/7.3-win32/include
+  /usr/lib/gcc/i686-w64-mingw32/7.3-win32/include-fixed
+  /usr/i686-w64-mingw32/include
+  
 # 如何查看默认链接路径及链接库
   gcc -v foo.c -Wl,--verbose 
+  
+# C++异常模型有dwarf、sjlj、seh，如何查看所用的gcc的默认异常模型？
+  //A.cpp
+  struct A{~A();};
+  void bar();
+  void foo(){
+    A a;
+    bar();
+  }
+  
+  g++ -S A.cpp -o A.s
+  搜索 __gxx_personality_，在其所在位置处会显示异常模型。
+  
+  比如：ubuntu18.04 的 i686-w64-mingw32-gcc 默认异常模型为 sjlj.
+  
+#  
+  
+  
