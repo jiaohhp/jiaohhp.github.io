@@ -1,0 +1,16 @@
+win32 {
+    TARGET_EXT = .exe
+    DEPLOY_COMMAND = windeployqt.exe
+}
+macx {
+    TARGET_EXT = .app
+    DEPLOY_COMMAND = macdeployqt
+}
+
+DESTDIR = $${OUT_PWD}/deploy
+DEPLOY_TARGET = $${DESTDIR}/$${TARGET}$${TARGET_EXT}
+DEPLOY_CMD = $${DEPLOY_COMMAND} $${DEPLOY_TARGET}
+warning(qtdir:$$getenv(QTDIR))
+warning(deploy:$${DEPLOY_CMD})
+
+QMAKE_POST_LINK += $${DEPLOY_CMD}
