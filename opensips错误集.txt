@@ -1,0 +1,11 @@
+1. 测试配置文件时错误：ERROR:core:main: no transport protocol loaded
+    命令：/usr/sbin/opensips -C /etc/opensips/opensips.cfg
+    输出：
+        INFO:core:fix_poll_method: using epoll_lt as the IO watch method (auto detected)
+        WARNING:core:trans_load: No listener defined for proto udp; You will not be able to send or receive messages using the udp protocol!
+        ERROR:core:main: no transport protocol loaded
+        INFO:core:cleanup: cleanup
+        NOTICE:core:main: Exiting....
+    解决：配置文件中加入如下语句
+        loadmodule "proto_udp.so"
+        loadmodule "proto_tcp.so"
