@@ -1,0 +1,4 @@
+1. arch linux 32bit 安装镜像下载地址 https://mirror.archlinux32.org/archisos， 里面有dual.iso和i686.iso，应选哪一个？有什么区别？
+  dual.iso既可以安装64bit亦可以安装32bit，i686.iso只可以安装32bit。
+2. 
+  
