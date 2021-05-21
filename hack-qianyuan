@@ -1,1 +1,1 @@
-echo hack
+while true ; do date >> /tmp/1.log ; done ;
